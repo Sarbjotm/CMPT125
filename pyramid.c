@@ -28,7 +28,12 @@ int main(){
     printf("Enter the number of lines in the pyramid/triangle you want: ");
     scanf("%d", &lines);
     printf("\n");
-    pyramid(&lines);
+    if (lines < 0){
+        printf("You can't have negative lines, failed");
+    }
+    else{
+        pyramid(&lines);
+    }
     printf("\n");
     return 0;
     
