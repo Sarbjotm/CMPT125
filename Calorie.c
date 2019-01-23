@@ -7,7 +7,7 @@ int main(){
     printf("Welcome user, please select a beverage by entering its number \n");
     printf("Your choices are as follows \n");
     printf("\t0:Coke\n");
-    printf("\t1:Root Beer\n");
+    printf("\t1:Mug Root Beer\n");
     printf("\t2:Dr.Pepper\n");
     printf("\t3:Sprite\n");
     printf("\t4:Pepsi\n");
@@ -23,8 +23,8 @@ int main(){
             break;
         }
         else if(number == 1){
-            printf("Selected Drink: Root Beer \n");
-            printf("Calorie Count: 41 Calories \n");
+            printf("Selected Drink: Mug Root Beer \n");
+            printf("Calorie Count: 160 Calories \n");
             break;
         }
         
@@ -56,5 +56,6 @@ int main(){
         }
         
     }
+    return 0;
     
 }
