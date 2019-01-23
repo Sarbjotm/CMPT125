@@ -8,11 +8,7 @@ int main(){
         printf("%d ", array[i]);
     }
     printf("\n");
-    for (int i = 0; i < length; i++){
-        if(i == 9){
-            break;
-        }
-        else{
+    for (int i = 0; i < length-1; i++){
         for(int j = i+1; j <= 9; j++){
             if (array[j] <= array[i]){
                 tmp = array[i];
@@ -21,7 +17,6 @@ int main(){
             }
             }
         }
-    }
     for (int i = 0; i < length; i++){
         printf("%d ", array[i]);
     }
