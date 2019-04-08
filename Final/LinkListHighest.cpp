@@ -69,15 +69,37 @@ int HighestValue(LL_t* intlist){
     return max;
     
 }
+
+int LowestValue(LL_t* intlist){
+    int min = 0;
+    if (intlist->head == NULL){
+        printf("List is empty, returning -1337 \n");
+        min = -1337;
+    }
+    else{
+        min = intlist->head->data;
+        for(node_t * curr = intlist->head; curr->next !=NULL; curr = curr->next){
+            if (curr->next->data < min){
+                min = curr->next->data;
+            }
+            
+        }
+    }
+    return min;
+    
+}
+
+
+
 int main(){
     LL_t * intlist = LLcreate();
-    LLappend(intlist, 23);
-    LLappend(intlist, 241);
-    LLappend(intlist, 3);
     int highest = HighestValue(intlist);
+    int lowest = LowestValue(intlist);
     PrintLinkedList(intlist);
     printf("\n");
     printf("The highest value in the linked list is %d \n", highest);
+    printf("The lowest value in the linked list is %d \n", lowest);
+
     return 0;
    
     
