@@ -18,7 +18,7 @@ int same_string(char string1[], char string2[]){
     //This won't check lengths so lets check if string1 has extra characters or not.
     }
     if(string1[i] == '\0' && string2[i] != '\0'){
-        return 0;
+        return result;
     }
     return result;
     
@@ -27,7 +27,7 @@ int same_string(char string1[], char string2[]){
 
 int main(){
     char string1[] = "Hello";
-    char string2[] = "";
+    char string2[] = "Hell";
     int similiar = same_string(string1, string2);
     if (similiar == 1){
         printf("The strings are the same \n");

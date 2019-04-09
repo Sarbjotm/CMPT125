@@ -63,10 +63,14 @@ int CompareLinkedLists(LL_t * intlist1, LL_t* intlist2){
     int mul_c2 = 1;
     if (current_l1 == NULL && current_l2 == NULL){
         printf("Both lists are empty, therefore no need to run through lists \n");
+        delete current_l1;
+        delete current_l2;
         return 1;
     }
     else if((current_l1 == NULL && current_l2 != NULL) || (current_l1 != NULL && current_l2 == NULL)){
         printf("One of the list is empty while the other isn't, therefore different \n");
+        delete current_l1;
+        delete current_l2;
         return 0;
     }
     else{
@@ -83,10 +87,14 @@ int CompareLinkedLists(LL_t * intlist1, LL_t* intlist2){
         }
         if(sum_c1 == sum_c2 && mul_c1 == mul_c2){
             printf("The linked list have the same elements \n");
+            delete current_l1;
+            delete current_l2;
             return 1;
         }
         else{
             printf("Not same elements \n");
+            delete current_l1;
+            delete current_l2;
             return 0;
         }
        
@@ -101,15 +109,17 @@ int CompareLinkedLists(LL_t * intlist1, LL_t* intlist2){
 int main(){
     LL_t * intlist = LLcreate();
     LL_t * intlist2 = LLcreate();
-    int same = CompareLinkedLists(intlist, intlist2);
-    printf("When both lists are empty: %d \n", same);
-    LLappend(intlist, 5);
-    same = CompareLinkedLists(intlist, intlist2);
-    printf("When one list is empty: %d \n", same);
-    LLappend(intlist, 5);
+    LLappend(intlist2, 9);
     LLappend(intlist2, 5);
-    same = CompareLinkedLists(intlist, intlist2);
-    printf("%d \n", same);
+    LLappend(intlist2, 8);
+    LLappend(intlist, 5);
+    LLappend(intlist, 8);
+    LLappend(intlist, 9);
+    printf("Linked list 1: ");
+    PrintLinkedList(intlist);
+    printf("Linked list 2: ");
+    PrintLinkedList(intlist2);
+    CompareLinkedLists(intlist, intlist2);
     return 0;
    
     

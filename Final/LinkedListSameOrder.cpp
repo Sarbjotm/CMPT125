@@ -50,13 +50,40 @@ void PrintLinkedList(LL_t * intlist){
 }
 
 
+int CompartSameOrder(LL_t* intlist, LL_t* intlist2){
+    //Must be in the same order
+    node_t* current_l1 = new node_t;
+    node_t* current_l2 = new node_t;
+    current_l1 = intlist->head;
+    current_l2 = intlist2->head;
+    while(current_l1 != NULL){
+        if(current_l2 == NULL){
+            return 0;
+        }
+        else if(current_l1->data != current_l2->data){
+            return 0;
+        }
+        current_l1 = current_l1->next;
+        current_l2 = current_l2->next;
+
+    }
+    //Now lets check if intlist2 is null if not, then they're different
+    if (current_l2 != NULL){
+        return 0;
+    }
+    return 1;
+
+    
+}
 
 int main(){
     LL_t * intlist = LLcreate();
+    LL_t * intlist2 = LLcreate();
     LLappend(intlist, 23);
     LLappend(intlist, 10);
-    LLappend(intlist, 3);
-    PrintLinkedList(intlist);
-    
+ 
+    int same = CompartSameOrder(intlist, intlist2);
+    printf("%d", same);
+    printf("\n");
 }
 
